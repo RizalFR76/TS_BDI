@@ -11,7 +11,12 @@ $kota_dibali = array(
     'Kabupaten Tabanan',
     'Kota Denpasar'
 );
-print_r($kota_dibali);
+// print_r($kota_dibali);
+$banyak_kota = count($kota_dibali);
+for ($x=0;$x < $banyak_kota;$x++){
+  echo $kota_dibali[$x];
+  echo '<br>';
+}
 echo '<br>';
 
 
@@ -57,12 +62,15 @@ class provinsi {
   }
 }
 
+
 $bali = new provinsi();
 $bali ->set_nama('Bali');
 $bali ->set_ibu_kota('Denpasar');
 $bali ->set_website('https://www.baliprov.go.id/');
 $bali ->set_gubernur('Dr. Ir. WAYAN KOSTER, MM');
 $bali ->set_wakil_gubernur('Dr. Ir. TJOK OKA ARTHA ARDHANA SUKAWATI, M.Si');
+
+// print_r($bali);
 
 echo $bali->get_nama();
 echo "<br>";
@@ -74,6 +82,7 @@ echo $bali->get_gubernur();
 echo "<br>";
 echo $bali->get_wakil_gubernur();
 echo '<br>';
+echo $bali-> gubernur;
 
 // membuat funsi yang memiliki dua parameter integer
 function pengurangan(int $a, int $b) {
