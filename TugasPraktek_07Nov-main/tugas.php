@@ -83,6 +83,7 @@ echo "<br>";
 echo $bali->get_wakil_gubernur();
 echo '<br>';
 echo $bali-> gubernur;
+echo '<br>';
 
 // membuat funsi yang memiliki dua parameter integer
 function pengurangan(int $a, int $b) {
