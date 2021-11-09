@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>The push method appends a new element to an array.</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+
+    <!-- coba -->
+    <script>
+      const fruits = ["Banana", "Orange", "Apple"];
+      document.getElementById("demo").innerHTML = fruits;
+
+      function myFunction() {
+        fruits.push("Lemon");
+        document.getElementById("demo").innerHTML = fruits;
+      }
+    </script>
+    <!-- akhir coba -->
+    <script src="type.js"></script>
+    <script>
+      var warna = ["merah", "kuning", "hijau", "biru", "hitam", "putih"];
+
+      function search(data, key) {
+        for (let i = 0; i < data.length; i++) {
+          if (key == data[i]) {
+            return i;
+          }
+        }
+      }
+
+      console.log(search(warna, "hitam"));
+      console.log("============= sebelum sort ======");
+      console.log(warna);
+      var warna2 = warna.sort;
+      console.log("============ setelah sort ==========");
+      console.log(warna.sort);
+      console.log("==========================");
+    </script>
+  </body>
+</html>
