@@ -1,0 +1,12 @@
+#type data
+INT,
+VARCHAR,
+CHAR,
+BOOLEAN,
+ENUM,
+DOUBLE,
+DATE,
+TIME,
+TEXT,
+BIGINT,
+
