@@ -60,8 +60,8 @@
                 <td>".$data['jenis_kelamin']."</td>
                 <td>".$data['tgl_lahir']."</td>
                 <td>
-                    <a href='edit.php?user_name=".$data['user_name']."' class= 'btn btn-sm btn-info'>edit</a>
-                    <a href='proses/delete.php?user_name=".$data['user_name']."' class= 'btn btn-sm btn-danger'>hapus</a>
+                    <a href='edit.php?id_pelanggan=".$data['id_pelanggan']."' class= 'btn btn-sm btn-info'>edit</a>
+                    <a href='#' onclick='validasi(".$data['id_pelanggan'].")' class= 'btn btn-sm btn-danger'>hapus</a>
                 </td>
                 
                 </tr>
@@ -81,5 +81,45 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function validasi(param) {
+            const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+            })
+
+            Swal.fire({
+            title: 'Yakin?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
+                var delayInMilliseconds = 500; //1 second
+                setTimeout(function() {
+                    //your code to be executed after 1 second
+                    window.location.href = "proses/delete.php?id_pelanggan="+param;
+                }, delayInMilliseconds);
+            } else {
+                swalWithBootstrapButtons.fire(
+                'Yah kok ga jadi',
+                'untung kamu labil',
+                'error'
+                )
+            }
+            })
+        }
+    </script>
 </body>
 </html>

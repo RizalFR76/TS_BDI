@@ -18,8 +18,8 @@
             <!-- get data agar bisa diedit -->
             <?PHP
             require_once("config.php");
-                $parameter = $_GET['user_name'];
-                $query = "SELECT * FROM pelanggan where user_name =". $parameter;
+                $parameter = $_GET['id_pelanggan'];
+                $query = "SELECT * FROM pelanggan where id_pelanggan =". $parameter;
 
                 if ($query = mysqli_query($koneksi,$query)) {
                     $row = $query -> fetch_assoc();
@@ -28,7 +28,7 @@
                     echo "ERROR : mysqli error $query";
                 }
             ?>
-            <form action="proses/update.php?user_name='<?PHP echo $parameter ?>'" method="post">
+            <form action="proses/update.php?id_pelanggan='<?PHP echo $parameter ?>'" method="post">
                 <div class="form-group">
                     <label for="">user_name</label>
                     <input type="text" name="user_name" id="user_name" class="form-control " placeholder="masukan user_name" required value="<?php echo $row['user_name'] ?>">

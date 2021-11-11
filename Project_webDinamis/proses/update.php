@@ -1,6 +1,6 @@
 <?PHP
     require_once("../config.php");
-    $parameter = $_GET['user_name'];
+    $parameter = $_GET['id_pelanggan'];
     //tangkap inputan user
     $user_name = $_POST['user_name'];
     $nama = $_POST['nama'];
@@ -11,7 +11,7 @@
     $email = $_POST['email'];
     
     // sipakan query
-    $query = "UPDATE pelanggan set user_name='$user_name', nama='$nama', jenis_kelamin='$jenis_kelamin',tgl_lahir='$tgl_lahir', alamat='$alamat', no_hp='$no_hp', email='$email' where user_name = $parameter;";
+    $query = "UPDATE pelanggan set user_name='$user_name', nama='$nama', jenis_kelamin='$jenis_kelamin',tgl_lahir='$tgl_lahir', alamat='$alamat', no_hp='$no_hp', email='$email' where id_pelanggan = $parameter;";
     
     // jalankan query
 

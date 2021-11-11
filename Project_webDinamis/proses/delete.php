@@ -1,11 +1,11 @@
 <?PHP
     require_once("../config.php");
-    $user_name = $_GET['user_name'];
+    $id_pelanggan = $_GET['id_pelanggan'];
     //tangkap inputan user
     
 
     // sipakan query
-    $query = "DELETE from pelanggan where user_name = '$user_name'";
+    $query = "DELETE from pelanggan where id_pelanggan = '$id_pelanggan'";
     
     // jalankan query
 
