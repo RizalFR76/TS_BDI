@@ -19,8 +19,8 @@
     //     # code...
     // } 
     if ($query= mysqli_query($koneksi,$query)) {
-        header('location: ../index.php?status=success');
+        header('location: ../Halaman_awal.php?status=success');
     }else {
-        header('location: ../index.php?status=error');
+        header('location: ../Halaman_awal.php?status=error');
     }
 ?>
