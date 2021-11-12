@@ -9,20 +9,27 @@
     $alamat = $_POST['alamat'];
     $no_hp = $_POST['no_hp'];
     $email = $_POST['email'];
+    $password = $_POST['password'];
     
     // sipakan query
-    $query = "INSERT INTO pelanggan (user_name, nama, jenis_kelamin,tgl_lahir, alamat, no_hp, email) VALUES ('$user_name','$nama','$jenis_kelamin','$tgl_lahir','$alamat','$no_hp','$email');";
+    $query = "INSERT INTO pelanggan (user_name, nama, jenis_kelamin,tgl_lahir, alamat, no_hp, email, password) VALUES ('$user_name','$nama','$jenis_kelamin','$tgl_lahir','$alamat','$no_hp','$email',$password);";
     
-    // jalankan query
-
-    // if (!empty()) {
-    //     # code...
-    // } 
-    
-    if ($query= mysqli_query($koneksi,$query)) {
-        $data = mysqli_fetch_array($query);
-        header('location: ../barang.php?status=success');
-    }else {
-        header('location: ../barang.php?status=error');
+    // jalankan query 
+    // if ($query= mysqli_query($koneksi,$query)) {
+    //     header('location: ../1.php?status=success');
+    // }else {
+    //     header('location: ../1.php?status=error');
+    // }
+    $queryCekId = "SELECT NIM FROM pelanggan WHERE user_name LIKE '$user_name'";
+    $cekId = mysqli_query($koneksi, $queryCekId);
+    if (!empty($cekId->{'num_rows'})) {
+        header('location: ../registrasi.php?status=NIM_sudah_ada');
+    } else
+        if ($query = mysqli_query($koneksi, $query)) {
+        header('location: ../login.php?status=success');
+    } else {
+        # code...
+        header('location: ../registrasi.php?status=error');
     }
+    
 ?>

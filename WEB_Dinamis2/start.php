@@ -77,47 +77,9 @@
 
         <section class="inner-page">
         <div class="container">
-            <div class="container mt-5 card">
-                <h1 class="mt-3">Login</h1>
-                <hr>
-
-                <?php
-                $cek = count($_GET);
-                if ($cek > 0) {
-                    $status = $_GET['status'];
-                    # code...
-                    if ($status == 'username_tidak_terdaftar') {
-                        echo "
-                            <div class='alert alert-warning' role='alert'>
-                                username tidak terdaftar atau password salah!
-                            </div>
-                            ";
-                    } elseif ($status == 'success') {
-                        echo "
-                            <div class='alert alert-primary' role='alert'>
-                                Berhasil mendaftar!
-                            </div>
-                            ";
-                    }
-                }
-                ?>
-                <form method="post" action="proses/check-in.php" enctype="multipart/form-data">
-
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input class="form-control" type="text" id="username" name="username" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input class="form-control" type="text" id="password" name="password" placeholder="">
-                    </div>
-
-                    <center class="mb-3">
-                        <button type="submit" class="btn btn-primary">Submit</button><br>
-                        <a href="register.php">belum punya akun?</a>
-                    </center>
-                </form>
-            </div>
+            <p>
+            Example inner page template
+            </p>
         </div>
         </section>
 
