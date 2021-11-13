@@ -20,10 +20,11 @@
             require_once("config.php");
                 $parameter = $_GET['id_pelanggan'];
                 $query = "SELECT * FROM pelanggan where id_pelanggan =". $parameter;
-
+                echo"<hr>";
+                // echo"$parameter";
                 if ($query = mysqli_query($koneksi,$query)) {
                     $row = $query -> fetch_assoc();
-                    print_r($row);
+                    // print_r($row);
                 }else {
                     echo "ERROR : mysqli error $query";
                 }

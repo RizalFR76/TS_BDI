@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -29,7 +29,7 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
-    </head>
+</head>
 
 <body>
 
@@ -79,6 +79,18 @@
         <div class="container">
             <?php
             require_once('config.php');
+            $parameter = $_GET['user_name'];
+                $query = "SELECT * FROM pelanggan where user_name = '$parameter'" ;
+                echo"<hr>";
+                echo"$parameter";
+                
+                
+                if ($query = mysqli_query($koneksi,$query)) {
+                    $row = $query -> fetch_assoc();
+                    print_r($row);
+                }else {
+                    echo "ERROR : mysqli error $query";
+                }
             ?>
 
             
@@ -93,17 +105,25 @@
                 if ($cek > 0) {
                     $status = $_GET['status'];
                     $user_name = $_GET['user_name'];
+                    $query = "SELECT * FROM pelanggan where user_name =". $user_name;
                     # code...
-                    if ($status == 'user_name_terdaftar' ) {
+                    if ($status == 'user_name_terdaftar' and !(empty($query))) {
                         echo "
                             <div class='alert alert-primary' role='alert'>
                                 username terdaftar, Selamat datang!
                             </div>
                             ";
+                    }else {
+                        
                     }
+                }else {
+                    header('location: login.php?status=user_name_tidak_terdaftar');
                 }
+                echo $user_name;
+        
                 ?>
                 <hr>
+                
             </div>
         </div>
         </section>

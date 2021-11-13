@@ -39,7 +39,7 @@
     // $cekPassword = mysqli_query($koneksi, $queryCekPassword);
 
     if (!empty($cekUsername->{'num_rows'})) {
-        header('location: ../2.php?status=user_name_terdaftar &user_name=' . $user_name);
+        header('location: ../2.php?status=user_name_terdaftar&user_name=' . $user_name);
         // } elseif ($queryInput = mysqli_query($koneksi, $queryInput)) {
         //         header('location: ../index.php?status=success' . $NIM);
     } else {
