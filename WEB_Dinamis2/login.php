@@ -86,10 +86,10 @@
                 if ($cek > 0) {
                     $status = $_GET['status'];
                     # code...
-                    if ($status == 'username_tidak_terdaftar') {
+                    if ($status == 'user_name_tidak_terdaftar') {
                         echo "
                             <div class='alert alert-warning' role='alert'>
-                                username tidak terdaftar atau password salah!
+                                user_name tidak terdaftar atau password salah!
                             </div>
                             ";
                     } elseif ($status == 'success') {
@@ -101,21 +101,23 @@
                     }
                 }
                 ?>
-                <form method="post" action="proses/check-in.php" enctype="multipart/form-data">
+                <form method="post" action="proses/check.php" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label for="username">Username</label>
-                        <input class="form-control" type="text" id="username" name="username" placeholder="">
+                        <label for="">Username</label>
+                        <input class="form-control" type="text" id="user_name" name="user_name" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input class="form-control" type="text" id="password" name="password" placeholder="">
+                        <label for="">Password</label>
+                        <input class="form-control" type="password" id="password" name="password" placeholder="">
                     </div>
+                    <hr>
 
                     <center class="mb-3">
                         <button type="submit" class="btn btn-primary">Submit</button><br>
-                        <a href="register.php">belum punya akun?</a>
+                        
                     </center>
+                    <a href="registrasi.php">belum punya akun?</a>
                 </form>
             </div>
         </div>

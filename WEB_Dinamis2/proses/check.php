@@ -33,17 +33,16 @@
     // }
 
 
-    $queryCekUsername = "SELECT username FROM pelanggan WHERE username LIKE '$username' AND `password` = '$password'";
-    // $queryCekPassword = "SELECT password FROM pelanggan WHERE password LIKE '$username'";
+    $queryCekUsername = "SELECT user_name FROM pelanggan WHERE user_name LIKE '$user_name' AND `password` = '$password'";
+    // $queryCekPassword = "SELECT password FROM pelanggan WHERE password LIKE '$user_name'";
     $cekUsername = mysqli_query($koneksi, $queryCekUsername);
     // $cekPassword = mysqli_query($koneksi, $queryCekPassword);
 
     if (!empty($cekUsername->{'num_rows'})) {
-        header('location: ../../home.php?status=username_terdaftar?username=' . $username);
+        header('location: ../2.php?status=user_name_terdaftar &user_name=' . $user_name);
         // } elseif ($queryInput = mysqli_query($koneksi, $queryInput)) {
         //         header('location: ../index.php?status=success' . $NIM);
     } else {
-        # code...
-        header('location: ../login.php?status=username_tidak_terdaftar');
+        header('location: ../login.php?status=user_name_tidak_terdaftar');
     }
 ?>

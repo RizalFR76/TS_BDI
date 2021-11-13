@@ -23,7 +23,7 @@
     $queryCekId = "SELECT NIM FROM pelanggan WHERE user_name LIKE '$user_name'";
     $cekId = mysqli_query($koneksi, $queryCekId);
     if (!empty($cekId->{'num_rows'})) {
-        header('location: ../registrasi.php?status=NIM_sudah_ada');
+        header('location: ../registrasi.php?status=user_name');
     } else
         if ($query = mysqli_query($koneksi, $query)) {
         header('location: ../login.php?status=success');
