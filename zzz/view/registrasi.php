@@ -10,11 +10,19 @@
     ?>
 </head>
 <body>
-
+<?PHP
+    include ('../layouts/navbar.php');
+    include ('../layouts/gelombang.php');
+    
+?>
 <div class="container pt-5">
     <div class="card">
         <div class="card-body">
-        <h1>Halaman Form Tambah Data</h1>
+        <h1 class="text-center">Halaman Form Tambah Data</h1>
+        <hr />
+            <a >Sudah punya akun?</a> <br>
+            <a href="login.php" class="btn btn-primary">Login</a>
+        <hr>
         <form action="../proses/simpan.php" method="post">
             <div class="form-group">
             <label for="">Username</label>
@@ -37,8 +45,8 @@
             </div>
             </div>
             <div class="form-group">
-            <label for="">Tanggal Lahir</label>
-            <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-control" placeholder="masukan alamat" required />
+                <label for="">Tanggal Lahir</label>
+                <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-control" placeholder="masukan alamat" required />
             </div>
             <div class="form-group">
             <label for="">Alamat</label>
@@ -58,18 +66,16 @@
             </div>
             <hr />
             <div class="form-group text-center">
-            <!-- <a href="index.php" class="btn btn-md btn-danger">batal</a> -->
             <button type="submit" class="btn btn-md btn-success">Submit</button>
             </div>
-            <hr />
-            <a >Sudah punya akun?</a> <br>
-            <a href="login.php" class="btn btn-primary">Login</a>
+            
         </form>
         </div>
     </div>
 </div>
     <?PHP
     include ('../layouts/js.php');
+    include('../layouts/footer.php');
     ?>
 </body>
 </html>

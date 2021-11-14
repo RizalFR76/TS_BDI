@@ -7,9 +7,14 @@
     <title>Edit Profil</title>
     <?php
     include ('../layouts/css.php');
+    include('../layouts/js.php');
     ?>
 </head>
 <body>
+<?PHP
+    include ('../layouts/navbar.php');
+    include ('../layouts/gelombang.php');
+?>
     <div class="container pt-5">
         <div class="card">
             <div class="card-body">
@@ -83,5 +88,8 @@
             </div>
         </div>
     </div>
+<?PHP
+include ('../layouts/footer.php');
+?>
 </body>
 </html>

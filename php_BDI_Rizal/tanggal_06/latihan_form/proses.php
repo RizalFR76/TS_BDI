@@ -17,6 +17,7 @@
     $path = "image/".$foto_baru;
     $link_foto = $path;
 
+    print_r($hobi);
     if(!move_uploaded_file($tmp, $path)){
         # code ..
         echo "upload foto gagal";
