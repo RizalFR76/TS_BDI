@@ -19,7 +19,7 @@
             <?PHP
             require_once("config.php");
                 $parameter = $_GET['user_name'];
-                $query = "SELECT * FROM pelanggan where user_name =". $parameter;
+                $query = "SELECT * FROM pelanggan where user_name =".$parameter;
 
                 if ($query = mysqli_query($koneksi,$query)) {
                     $row = $query -> fetch_assoc();

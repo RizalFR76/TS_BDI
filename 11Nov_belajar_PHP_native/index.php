@@ -62,7 +62,7 @@
                 <td>
                   <a href='edit.php?user_name=".$data['user_name']."' class= 'btn btn-sm btn-info'>edit</a>
                   <a href='proses/delete.php?user_name=".$data['user_name']."' class= 'btn btn-sm btn-danger'>hapus</a>
-                </td>
+                </td> 
                 
               </tr>
               ";
