@@ -7,7 +7,6 @@
     <title>Pesanan Anda</title>
     <?PHP
     include('../layouts/css.php');
-    include('../layouts/js.php');
     ?>
 </head>
 <body>
@@ -85,6 +84,7 @@ $m = count($b);
 </table>
 <?PHP
     include('../layouts/footer.php');
+    include('../layouts/js.php');
 ?>
 </body>
 </html>

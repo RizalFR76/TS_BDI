@@ -14,7 +14,7 @@
         while ($data = mysqli_fetch_array($query)){
         echo "
         <tr>
-            <td href=>".$data['nama']."</td>
+            <td>".$data['nama']."</td>
             <td>".$data['jenis']."</td>
             <td>".$data['jumlah']."</td>
             <td>".$data['merk']."</td>             

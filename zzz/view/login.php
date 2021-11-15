@@ -67,6 +67,7 @@
     </div>
 <?PHP
     include ('../layouts/footer.php');
+    include('../layouts/js.php');
 ?>
 </body>
 </html>

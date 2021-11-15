@@ -46,7 +46,6 @@
                     <a href='edit_peminjaman.php?id_peminjaman=".$data['id_peminjaman']."' class= 'btn btn-sm btn-info'>edit</a>
                     <a href='proses/hapus_peminjaman.php?id_peminjaman=".$data['id_peminjaman']."'  class= 'btn btn-sm btn-danger'>hapus</a>
                 </td>
-                
                 </tr>
                 ";
             }
