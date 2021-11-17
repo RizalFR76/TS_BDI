@@ -33,7 +33,12 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/menu', 'MenuController::index');
-$routes->get('/menu', 'MenuController::edit');
+$routes->get('/menu/create', 'MenuController::tambah');
+$routes->add('/menu/store', 'MenuController::tambah_menu');
+$routes->get('/menu/edit/(:num)', 'MenuController::edit/$1');
+$routes->post('/menu/updateMenu/(:num)', 'MenuController::updateMenu/$1');
+$routes->get('/menu/delete/(:num)', 'MenuController::deleteMenu/$1');
+
 
 /*
  * --------------------------------------------------------------------
