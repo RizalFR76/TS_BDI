@@ -9,11 +9,11 @@ class FkUserLevel extends Migration
     public function up()
     {
         //
-        $this->forge->addForeignKey("user_id","user","id");
+        // $this->forge->addForeignKey("user_id","user","id");
     }
 
     public function down()
     {
-        $this->forge->dropForeignKey("detail","id");
+        // $this->forge->dropForeignKey("detail","id");
     }
 }

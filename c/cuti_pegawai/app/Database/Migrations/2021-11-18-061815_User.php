@@ -31,11 +31,11 @@ class User extends Migration
                 "constraint" => 11,
                 "null" => false
             ],
-            'level_id' => [
-                "type" => "INT",
-                "constraint" => 11,
-                "null" => false
-            ],
+            // 'level_id' => [
+            //     "type" => "INT",
+            //     "constraint" => 11,
+            //     "null" => false
+            // ],
             'level_active' => [
                 "type" => "INT",
                 "constraint" => 11,
