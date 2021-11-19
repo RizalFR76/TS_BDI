@@ -30,7 +30,7 @@
 
                 if ($query = mysqli_query($koneksi,$query)) {
                     $row = $query -> fetch_assoc();
-                    print_r($row);
+                    // print_r($row);
                 }else {
                     echo "ERROR : mysqli error $query";
                 }
