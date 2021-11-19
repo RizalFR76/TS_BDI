@@ -13,11 +13,21 @@
 </head>
 <body>
     <div class="container">
+    <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <h4>Periksa Entrian Form</h4>
+                        </hr />
+                        <?php echo session()->getFlashdata('error'); ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php endif; ?>
         <h1 align="center"> TAMBAH DATA</h1>
         <form method="post" action="<?=base_url('menu/store'); ?>">
             <div class="form-group">
                 <label for="nama">nama</label>
-                <input name="nama" type="text" class="form-control" id="nama" aria-describedby="emailHelp" placeholder="Masukan nama">
+                <input name="nama" type="text" class="form-control" id="nama"  placeholder="Masukan nama makanan">
             </div>
             <div class="form-group">
                 <label for="jenis">jenis</label>
@@ -25,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label for="harga">harga</label>
-                <input name="harga" type="text" class="form-control" id="harga" placeholder="harga">
+                <input name="harga" type="number" class="form-control" id="harga" placeholder="harga">
             </div>
             <div class="form-group">
                 <label for="penyajian">penyajian</label>

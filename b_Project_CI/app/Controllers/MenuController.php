@@ -26,14 +26,48 @@ class MenuController extends BaseController
 
     public function tambah_menu()
     {
-        $this->menu->insert([
-            'nama' => $this->request->getPost('nama'),
-            'jenis' => $this->request->getPost('jenis'),
-            'harga' => $this->request->getPost('harga'),
-            'penyajian' => $this->request->getPost('penyajian'),
-        ]);
-        return redirect('menu')->with('success', 'Data Added Successfully');
-    }
+        if (!$this->validate([
+            'nama' => [
+                'rules' => 'required|is_unique[menu.nama]',
+                'errors' => [
+                    'required' => '{field} Harus diisi',
+                    'is_unique' => 'nama sudah ada, silakan masukan nama lainnya'
+                ]
+                ],
+            'jenis' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+                ],
+            'harga' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ]
+            ])) {
+                session()->setFlashdata('error', $this->validator->listErrors());
+                return redirect()->back()->withInput();
+            } else {
+                $this->menu->insert([
+                            'nama' => $this->request->getPost('nama'),
+                            'jenis' => $this->request->getPost('jenis'),
+                            'harga' => $this->request->getPost('harga'),
+                            'penyajian' => $this->request->getPost('penyajian'),
+                        ]);
+                        return redirect('menu')->with('success', 'Data Added Successfully');
+            }
+        }
+    //     $this->menu->insert([
+    //         'nama' => $this->request->getPost('nama'),
+    //         'jenis' => $this->request->getPost('jenis'),
+    //         'harga' => $this->request->getPost('harga'),
+    //         'penyajian' => $this->request->getPost('penyajian'),
+    //     ]);
+    //     return redirect('menu')->with('success', 'Data Added Successfully');
+    // }
+
 
     public function edit($id)
     {
