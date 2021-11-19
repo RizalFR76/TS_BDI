@@ -32,6 +32,25 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+// route jenis cuti
+    $routes->get('jeniscuti', 'JenisCutiController::index');
+    $routes->get('jeniscuti/create', 'JenisCutiController::create');
+// akhir route jenis cuti
+// route detail level
+    $routes->get('detaillevel', 'DetailLevelController::index');
+// akhir route detail level
+// route level
+    $routes->get('level', 'LevelController::index');
+// akhir route level
+// route user
+    $routes->get('user', 'UserController::index');
+// akhir route user
+// route Pegawai
+    $routes->get('pegawai', 'PegawaiController::index');
+// akhir route Pegawai
+// route cuti
+    $routes->get('cuti', 'CutiController::index');
+// akhir route cuti
 
 /*
  * --------------------------------------------------------------------
