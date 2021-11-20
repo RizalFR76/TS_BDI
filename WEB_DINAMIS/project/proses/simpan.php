@@ -10,7 +10,7 @@
     $no_hp = $_POST['no_hp'];
     $email = $_POST['email'];
     $data = [
-        'user_name' => $user_name;
+        'user_name' => $user_name
     ];
     
     // sipakan query
