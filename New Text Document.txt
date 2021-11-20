@@ -1,0 +1,35 @@
+// Creating tables
+Table users{
+  id int [pk, increment] 
+  nama varchar
+  jenis_kelamin varchar
+  email varchar
+  no_hp varchar
+  alamat varchar
+  username varchar
+  password varchar
+  level enum
+}
+
+Table barang {
+  id int [pk, increment]
+  nama varchar
+  stok int
+  jenis varchar
+  merk varchar
+}
+
+Table sewa {
+  id int [pk, increment]
+  id_penyewa int
+  id_barang int
+  tgl_sewa timestamp
+  tgl_ambil date
+  tgl_pengembalian date
+  k_sewa enum
+  k_pengembalian enum
+}
+
+Ref: "users"."id" < "sewa"."id_penyewa"
+
+Ref: "barang"."id" < "sewa"."id_barang"
